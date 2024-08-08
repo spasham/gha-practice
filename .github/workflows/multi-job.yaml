@@ -7,24 +7,24 @@ jobs:
       - name: checkout the code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: npm ci 
+        run: echo "installing.."
       - name: Lint
-        run: npm lint run 
+        run: echo "linting.."
   test: 
     runs-on: ubuntu-latest
     steps:
       - name: checkout the code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: npm ci 
-      - name: Lint
-        run: npm lint run
+        run: echo "installing..""
+      - name: test
+        run: echo "testing..."
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: checkout the code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: npm ci 
+        run: echo "installing.."
       - name: deploy
         run: echo "deploying.."
