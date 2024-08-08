@@ -11,15 +11,17 @@ jobs:
       - name: Lint
         run: echo "linting.."
   test: 
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: checkout the code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: echo "installing..""
+        run: echo "installing.."
       - name: test
         run: echo "testing..."
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: checkout the code
