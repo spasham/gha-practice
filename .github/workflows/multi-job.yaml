@@ -1,4 +1,4 @@
-name: my-app
+name: multi-job
 on: push
 jobs:
   lint:
