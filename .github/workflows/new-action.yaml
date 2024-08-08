@@ -1,1 +1,20 @@
-#Hello
+name: my-app
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci 
+      - name: Lint
+        run: npm lint run 
+      - name: test code
+        run: npm run test
+      - name: building the code
+        run: npm run building
+      - name: message display
+        run: echo "Deploying.."
+        
+        
