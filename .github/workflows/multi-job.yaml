@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: echo "installing.."
       - name: Lint
-        run: echo "linting.."
+        run: echo "linting..."
   test: 
     needs: lint
     runs-on: ubuntu-latest
