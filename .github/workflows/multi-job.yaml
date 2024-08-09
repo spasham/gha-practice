@@ -11,14 +11,17 @@ on:
   workflow_dispatch:
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        operating-systm: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.operating-system }}
     steps:
-      - name: checkout the code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: echo "installing.."
-      - name: Lint
-        run: echo "linting..."
+        - name: checkout the code
+          uses: actions/checkout@v3
+        - name: Install dependencies
+          run: echo "installing.."
+        - name: Lint
+          run: echo "linting..."
   test: 
     needs: lint
     runs-on: ubuntu-latest
